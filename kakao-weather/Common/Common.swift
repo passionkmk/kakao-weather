@@ -8,7 +8,8 @@
 
 import Foundation
 
-typealias RouterResponse = (data: Data, code: Int)
+typealias Success = (data: Data, code: Int)
+typealias Failure = (message: String?, code: Int)
 typealias ApiResult = (Data?)
 
 enum Host {

@@ -12,6 +12,16 @@ import OAuthSwift
 // MARK: - Main
 enum Router {
     case weather(parameter: [String: Any])
+    
+    public func request(completion: @escaping (ApiResult) -> Void) {
+        build(successCompletion: { (suc) in
+            d(">>> [Success]: ==== CODE: [\(suc.code)]")
+            completion(suc.data)
+        }) { (fail) in
+            d(">>> [Error]: \(String(describing: fail.message)) ==== CODE: [\(fail.code)]")
+            completion(nil)
+        }
+    }
 }
 
 // MARK: - Value
@@ -55,7 +65,7 @@ extension Router {
 
 // MARK: - Function
 extension Router {
-    func build() { //  -> RouterResponse
+    private func build(successCompletion: @escaping (Success) -> Void, failureCompletion: @escaping (Failure) -> Void) {
         guard let url = urlComponents.url else {
             return
         }
@@ -67,9 +77,13 @@ extension Router {
                              checkTokenExpiration: true) { (result) in
                                 switch result {
                                 case .success(let success):
-                                    // TODO: - Handler
+                                    d(">>> \(url.absoluteString)")
+                                    let completion: Success = (success.data, success.response.statusCode)
+                                    successCompletion(completion)
                                     break
                                 case .failure(let failure):
+                                    let completion: Failure = (failure.description, failure.errorCode)
+                                    failureCompletion(completion)
                                     break
                                 }
                                 
