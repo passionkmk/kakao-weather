@@ -36,7 +36,10 @@ extension Router {
     private var parameter: [String: Any] {
         switch self {
         case .weather(let parameter):
-            return parameter
+            var param = parameter
+            param.updateValue("json", forKey: "format")
+            param.updateValue("c", forKey: "u")
+            return param
         }
     }
     
