@@ -19,6 +19,10 @@
 		7BFC26DE22FAD1C700D539D2 /* kakao_weatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC26DD22FAD1C700D539D2 /* kakao_weatherUITests.swift */; };
 		962B565222FBC60500874DAA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B565122FBC60500874DAA /* Log.swift */; };
 		962B565422FBC9B100874DAA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B565322FBC9B100874DAA /* Api.swift */; };
+		962B565B22FD3E7400874DAA /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B565A22FD3E7400874DAA /* Weather.swift */; };
+		962B565D22FD3E8300874DAA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B565C22FD3E8300874DAA /* Location.swift */; };
+		962B565F22FD3FFF00874DAA /* CurrentObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B565E22FD3FFF00874DAA /* CurrentObservation.swift */; };
+		962B566122FD401400874DAA /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B566022FD401400874DAA /* Forecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		7BFC26DF22FAD1C700D539D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		962B565122FBC60500874DAA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		962B565322FBC9B100874DAA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		962B565A22FD3E7400874DAA /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		962B565C22FD3E8300874DAA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		962B565E22FD3FFF00874DAA /* CurrentObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentObservation.swift; sourceTree = "<group>"; };
+		962B566022FD401400874DAA /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		B3AB86F9DD5910F6E573B3F9 /* Pods_kakao_weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kakao_weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D912D4759937438D16EC9461 /* Pods-kakao-weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakao-weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kakao-weather/Pods-kakao-weather.debug.xcconfig"; sourceTree = "<group>"; };
 		F465E03BAE16056140B2B0B6 /* Pods-kakao-weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakao-weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-kakao-weather/Pods-kakao-weather.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +106,7 @@
 		7B42C1E222FAD77400C93987 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				962B565922FD38E800874DAA /* Data */,
 				962B565522FBF6DB00874DAA /* Api */,
 			);
 			path = Model;
@@ -174,6 +183,17 @@
 				962B565322FBC9B100874DAA /* Api.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		962B565922FD38E800874DAA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				962B565A22FD3E7400874DAA /* Weather.swift */,
+				962B565C22FD3E8300874DAA /* Location.swift */,
+				962B565E22FD3FFF00874DAA /* CurrentObservation.swift */,
+				962B566022FD401400874DAA /* Forecast.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		FA375D8987AFB0263FA5B7BE /* Pods */ = {
@@ -367,10 +387,14 @@
 			files = (
 				962B565422FBC9B100874DAA /* Api.swift in Sources */,
 				7B42C1E622FB138500C93987 /* Router.swift in Sources */,
+				962B565D22FD3E8300874DAA /* Location.swift in Sources */,
 				7BFC26C022FAD1C600D539D2 /* ViewController.swift in Sources */,
 				962B565222FBC60500874DAA /* Log.swift in Sources */,
 				7B42C1E422FAD78800C93987 /* Common.swift in Sources */,
+				962B566122FD401400874DAA /* Forecast.swift in Sources */,
 				7BFC26BE22FAD1C600D539D2 /* AppDelegate.swift in Sources */,
+				962B565B22FD3E7400874DAA /* Weather.swift in Sources */,
+				962B565F22FD3FFF00874DAA /* CurrentObservation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
