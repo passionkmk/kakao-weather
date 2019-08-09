@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Api.shared.weather(lat: 37.509, lon: 127.063) { (data) in
+            d(data)
+        }
         // Do any additional setup after loading the view.
     }
 

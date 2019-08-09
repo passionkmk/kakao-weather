@@ -15,7 +15,7 @@ struct Weather: Codable {
 }
 
 extension Weather {
-    enum CordingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case location
         case currentObservation = "current_observation"
         case forecasts

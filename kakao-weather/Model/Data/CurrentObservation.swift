@@ -13,7 +13,7 @@ struct CurrentObservation: Codable {
     let atmosphere: Atmosphere
     let astronomy: Astronomy
     let condition: Condition
-    let pubDate: Date
+    let pubDate: Int
 }
 
 struct Wind: Codable {
@@ -24,7 +24,7 @@ struct Wind: Codable {
 
 struct Atmosphere: Codable {
     let humidity: Int
-    let visibility: Float
+    let visibility: Double
     let pressure: Int
     let rising: Int
 }

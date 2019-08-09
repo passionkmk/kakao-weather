@@ -22,16 +22,21 @@ class Api {
 
 // MARK: - Api List
 extension Api {
-    public func weather(lat: Double, lon: Double) {
+    public func weather(lat: Double, lon: Double, completion: @escaping (_ data: Weather?) -> Void){
         
         let parameter: [String: Any] = [
             "lat": lat,
             "lon": lon
         ]
         Router.weather(parameter: parameter).request { [weak self] (data) in
-//            guard
-//                let data = data,
-//                let result = try? self?.decoder.decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
+            guard
+                let data = data,
+                let result = try? self?.decoder.decode(Weather.self, from: data) else {
+                    completion(nil)
+                    return
+            }
+            completion(result)
+            return
         }
     }
 }
