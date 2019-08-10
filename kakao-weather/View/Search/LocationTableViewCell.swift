@@ -15,7 +15,9 @@ class LocationTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        backgroundColor = .clear
         locationLabel.text = nil
+        locationLabel.textColor = .white
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,6 +28,15 @@ class LocationTableViewCell: UITableViewCell {
 // MARK - Fucntion
 extension LocationTableViewCell {
     func compose(data: Spot) {
-        locationLabel.text = data.location
+        var location: String = ""
+        if let country = data.country {
+            location += country
+        }
+        
+        if let name = data.name {
+            location += ", \(name)"
+        }
+        
+        locationLabel.text = location
     }
 }

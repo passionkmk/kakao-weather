@@ -26,3 +26,7 @@ enum HTTPMethod: String {
     case put = "PUT"
     case delete = "DELETE"
 }
+
+enum CellName {
+    static let locationList: String = "LocationTableViewCell"
+}

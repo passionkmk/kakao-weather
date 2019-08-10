@@ -13,6 +13,8 @@
 		7B22E2AB22FEB33200C71FFF /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B22E2A922FEB33200C71FFF /* LocationTableViewCell.swift */; };
 		7B22E2AC22FEB33200C71FFF /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B22E2AA22FEB33200C71FFF /* LocationTableViewCell.xib */; };
 		7B22E2B022FEB45000C71FFF /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B22E2AF22FEB45000C71FFF /* Spot.swift */; };
+		7B22E2B222FEF33400C71FFF /* SearchLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B22E2B122FEF33400C71FFF /* SearchLocal.swift */; };
+		7B22E2B522FF1A6000C71FFF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B22E2B422FF1A6000C71FFF /* Extension.swift */; };
 		7B42C1E422FAD78800C93987 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42C1E322FAD78800C93987 /* Common.swift */; };
 		7B42C1E622FB138500C93987 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42C1E522FB138500C93987 /* Router.swift */; };
 		7BFC26BE22FAD1C600D539D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC26BD22FAD1C600D539D2 /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 		7B22E2A922FEB33200C71FFF /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		7B22E2AA22FEB33200C71FFF /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		7B22E2AF22FEB45000C71FFF /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		7B22E2B122FEF33400C71FFF /* SearchLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocal.swift; sourceTree = "<group>"; };
+		7B22E2B422FF1A6000C71FFF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7B42C1E322FAD78800C93987 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		7B42C1E522FB138500C93987 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7BFC26BA22FAD1C600D539D2 /* kakao-weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kakao-weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +166,7 @@
 			children = (
 				962B565922FD38E800874DAA /* Data */,
 				962B565522FBF6DB00874DAA /* Api */,
+				7B22E2B122FEF33400C71FFF /* SearchLocal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			children = (
 				7B42C1E322FAD78800C93987 /* Common.swift */,
 				962B565122FBC60500874DAA /* Log.swift */,
+				7B22E2B422FF1A6000C71FFF /* Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B22E2B522FF1A6000C71FFF /* Extension.swift in Sources */,
 				962B565422FBC9B100874DAA /* Api.swift in Sources */,
 				7B42C1E622FB138500C93987 /* Router.swift in Sources */,
 				962B565D22FD3E8300874DAA /* Location.swift in Sources */,
@@ -449,6 +456,7 @@
 				962B566122FD401400874DAA /* Forecast.swift in Sources */,
 				7BFC26BE22FAD1C600D539D2 /* AppDelegate.swift in Sources */,
 				962B565B22FD3E7400874DAA /* Weather.swift in Sources */,
+				7B22E2B222FEF33400C71FFF /* SearchLocal.swift in Sources */,
 				962B565F22FD3FFF00874DAA /* CurrentObservation.swift in Sources */,
 				7B22E2A422FEA5BD00C71FFF /* WeatherViewController.swift in Sources */,
 			);

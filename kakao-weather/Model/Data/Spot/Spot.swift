@@ -9,7 +9,8 @@
 import Foundation
 
 struct Spot {
-    let location: String
+    let name: String?
+    let country: String?
     let lat: Double
     let lon: Double
 }
