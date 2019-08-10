@@ -10,7 +10,7 @@ import Foundation
 
 struct Forecast: Codable {
     let day: String
-    let date: Int
+    let date: Date
     let low: Int
     let high: Int
     let text: String

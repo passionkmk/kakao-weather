@@ -14,6 +14,7 @@ class Api {
     
     var decoder: JSONDecoder {
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
         return decoder
     }
     
