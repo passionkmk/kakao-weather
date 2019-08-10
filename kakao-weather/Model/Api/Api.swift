@@ -29,6 +29,7 @@ extension Api {
             "lat": lat,
             "lon": lon
         ]
+        
         Router.weather(parameter: parameter).request { [weak self] (data) in
             guard
                 let data = data,
