@@ -30,3 +30,7 @@ enum HTTPMethod: String {
 enum CellName {
     static let locationList: String = "LocationTableViewCell"
 }
+
+enum NotificationName {
+    static let locationSelect: String = "LocationSelectNotification"
+}

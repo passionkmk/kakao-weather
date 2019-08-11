@@ -84,8 +84,8 @@ extension SearchViewController: UITableViewDelegate {
         guard let spot = locations.get(index: indexPath.row) else {
             return
         }
-        d(spot)
-        // TODO: - 뒤로가기, Post
+        NotificationCenter.default.post(name: Notification.Name(NotificationName.locationSelect), object: nil, userInfo: ["spot": spot])
+        navigationController?.popViewController(animated: true)
     }
 }
 
