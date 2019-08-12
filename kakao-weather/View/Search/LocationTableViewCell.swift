@@ -28,15 +28,7 @@ class LocationTableViewCell: UITableViewCell {
 // MARK - Fucntion
 extension LocationTableViewCell {
     func compose(data: Spot) {
-        var location: String = ""
-        if let country = data.country {
-            location += country
-        }
         
-        if let name = data.name {
-            location += ", \(name)"
-        }
-        
-        locationLabel.text = location
+        locationLabel.text = "\(data.country), \(data.name)"
     }
 }

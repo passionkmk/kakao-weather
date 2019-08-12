@@ -28,13 +28,16 @@ extension SearchLocal {
                 return
             }
             let places = spots.compactMap({ (mark) -> Spot? in
-                guard let loc = mark.location else {
+                guard
+                    let loc = mark.location,
+                    let name = mark.name,
+                    let country = mark.country else {
                     return nil
                 }
                 let lat = loc.coordinate.latitude
                 let lon = loc.coordinate.longitude
 
-                return Spot(name: mark.name, country: mark.country, lat: lat, lon: lon)
+                return Spot(name: name, country: country, lat: lat, lon: lon)
             })
             completion(places)
         }

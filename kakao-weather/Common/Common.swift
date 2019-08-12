@@ -34,3 +34,7 @@ enum CellName {
 enum NotificationName {
     static let locationSelect: String = "LocationSelectNotification"
 }
+
+enum UserDefaultsKey {
+    static let spot = "UserDefaultsKeySpot"
+}

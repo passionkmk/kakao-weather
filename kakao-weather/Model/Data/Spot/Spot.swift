@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Spot {
-    let name: String?
-    let country: String?
+struct Spot: Codable {
+    let name: String
+    let country: String
     let lat: Double
     let lon: Double
 }

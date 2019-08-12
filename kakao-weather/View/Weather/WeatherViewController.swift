@@ -10,14 +10,19 @@ import UIKit
 
 // MARK: - Main
 class WeatherViewController: UIViewController {
+    
+    var locations: [Spot] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addNoti()
+        locations = UserDefaults.standard.getObjectArray(Spot.self, key: UserDefaultsKey.spot)
+        d(locations)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
     }
     
     deinit {
@@ -33,7 +38,15 @@ extension WeatherViewController {
         }
         
         if let spot = userInfo["spot"] as? Spot {
-            d(spot)
+            let index = locations.map { $0.name }.firstIndex(of: spot.name)
+            if let index = index {
+                // TODO: - Move index
+            }
+            else {
+                locations.insert(spot, at: 0)
+                UserDefaults.standard.setObjectArray(locations, key: UserDefaultsKey.spot)
+                // TODO: - Reload
+            }
         }
     }
 }
@@ -42,6 +55,5 @@ extension WeatherViewController {
 extension WeatherViewController {
     func addNoti() {
         NotificationCenter.default.addObserver(self, selector: #selector(WeatherViewController.locationSelect(notification:)), name: NSNotification.Name(rawValue: NotificationName.locationSelect), object: nil)
-        
     }
 }
