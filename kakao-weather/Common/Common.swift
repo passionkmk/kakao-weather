@@ -29,6 +29,7 @@ enum HTTPMethod: String {
 
 enum CellName {
     static let locationList: String = "LocationTableViewCell"
+    static let weatherList: String = "WeatherCollectionViewCell"
 }
 
 enum NotificationName {

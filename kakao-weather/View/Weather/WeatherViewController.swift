@@ -11,18 +11,34 @@ import UIKit
 // MARK: - Main
 class WeatherViewController: UIViewController {
     
+    lazy var collectionView: UICollectionView = { [unowned self] in
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 0.0
+        layout.minimumLineSpacing = 0.0
+        layout.scrollDirection = .horizontal
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.isPagingEnabled = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+
+        return collectionView
+    }()
+    
     var locations: [Spot] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addNoti()
+        addUI()
         locations = UserDefaults.standard.getObjectArray(Spot.self, key: UserDefaultsKey.spot)
         d(locations)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setLayout()
     }
     
     deinit {
@@ -55,5 +71,40 @@ extension WeatherViewController {
 extension WeatherViewController {
     func addNoti() {
         NotificationCenter.default.addObserver(self, selector: #selector(WeatherViewController.locationSelect(notification:)), name: NSNotification.Name(rawValue: NotificationName.locationSelect), object: nil)
+    }
+    
+    func addUI() {
+        collectionView.register(UINib(nibName: CellName.weatherList, bundle: nil), forCellWithReuseIdentifier: CellName.weatherList)
+        view.addSubview(collectionView)
+    }
+    
+    func setLayout() {
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+    }
+}
+
+// MARK: - UICollectionView DataSource
+extension WeatherViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return locations.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellName.weatherList, for: indexPath) as! WeatherCollectionViewCell
+        return cell
+    }
+    
+    
+}
+
+// MARK: - UICollectionView Delegates
+extension WeatherViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
 }

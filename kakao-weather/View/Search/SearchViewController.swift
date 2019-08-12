@@ -40,6 +40,11 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         addUI()
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setLayout()
+    }
 }
 
 // MARK: - Actions
@@ -50,9 +55,12 @@ extension SearchViewController {
 // MARK: - Functions
 extension SearchViewController {
     func addUI() {
-        navigationItem.titleView = searchTextField
         tableView.register(UINib(nibName: CellName.locationList, bundle: nil), forCellReuseIdentifier: CellName.locationList)
+        navigationItem.titleView = searchTextField
         view.addSubview(tableView)
+    }
+    
+    func setLayout() {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
