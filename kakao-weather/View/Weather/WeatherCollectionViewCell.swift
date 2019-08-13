@@ -10,6 +10,15 @@ import UIKit
 
 // MARK: - Main
 class WeatherCollectionViewCell: UICollectionViewCell {
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 0.0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,9 +26,20 @@ class WeatherCollectionViewCell: UICollectionViewCell {
 
 }
 
-// MARK: - Fuction
+// MARK: - Public Function
 extension WeatherCollectionViewCell {
-    func compose(data: WeatherPresentable) {
+    public func compose(data: WeatherPresentable) {
         // TODO
+    }
+}
+
+// MARK: - Private Function
+extension WeatherCollectionViewCell {
+    private func addUI() {
+        
+    }
+    
+    private func addLayout() {
+        
     }
 }
