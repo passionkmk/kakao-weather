@@ -31,6 +31,8 @@
 		962B566122FD401400874DAA /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B566022FD401400874DAA /* Forecast.swift */; };
 		96CCA94F2301570300FB1708 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CCA94D2301570300FB1708 /* WeatherCollectionViewCell.swift */; };
 		96CCA9502301570300FB1708 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96CCA94E2301570300FB1708 /* WeatherCollectionViewCell.xib */; };
+		96CCA95423028CCD00FB1708 /* WeatherPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CCA95323028CCD00FB1708 /* WeatherPresentable.swift */; };
+		96CCA95623029A0C00FB1708 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CCA95523029A0C00FB1708 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		962B566022FD401400874DAA /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		96CCA94D2301570300FB1708 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		96CCA94E2301570300FB1708 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
+		96CCA95323028CCD00FB1708 /* WeatherPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresentable.swift; sourceTree = "<group>"; };
+		96CCA95523029A0C00FB1708 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		B3AB86F9DD5910F6E573B3F9 /* Pods_kakao_weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kakao_weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D912D4759937438D16EC9461 /* Pods-kakao-weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakao-weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kakao-weather/Pods-kakao-weather.debug.xcconfig"; sourceTree = "<group>"; };
 		F465E03BAE16056140B2B0B6 /* Pods-kakao-weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakao-weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-kakao-weather/Pods-kakao-weather.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 			children = (
 				7B42C1E722FB240400C93987 /* Common */,
 				7B42C1E222FAD77400C93987 /* Model */,
+				96CCA951230275D000FB1708 /* ViewModel */,
 				7B22E2A222FEA59C00C71FFF /* View */,
 				7BFC26BD22FAD1C600D539D2 /* AppDelegate.swift */,
 				7BFC26C122FAD1C600D539D2 /* Main.storyboard */,
@@ -258,6 +263,15 @@
 				7B22E2AD22FEB42100C71FFF /* Api */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		96CCA951230275D000FB1708 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96CCA95323028CCD00FB1708 /* WeatherPresentable.swift */,
+				96CCA95523029A0C00FB1708 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FA375D8987AFB0263FA5B7BE /* Pods */ = {
@@ -452,10 +466,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B22E2B522FF1A6000C71FFF /* Extension.swift in Sources */,
+				96CCA95623029A0C00FB1708 /* WeatherViewModel.swift in Sources */,
 				96CCA94F2301570300FB1708 /* WeatherCollectionViewCell.swift in Sources */,
 				962B565422FBC9B100874DAA /* Api.swift in Sources */,
 				7B42C1E622FB138500C93987 /* Router.swift in Sources */,
 				962B565D22FD3E8300874DAA /* Location.swift in Sources */,
+				96CCA95423028CCD00FB1708 /* WeatherPresentable.swift in Sources */,
 				962B565222FBC60500874DAA /* Log.swift in Sources */,
 				7B42C1E422FAD78800C93987 /* Common.swift in Sources */,
 				7B22E2A622FEA5CD00C71FFF /* SearchViewController.swift in Sources */,

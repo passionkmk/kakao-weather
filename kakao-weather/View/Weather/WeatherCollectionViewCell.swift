@@ -8,10 +8,18 @@
 
 import UIKit
 
+// MARK: - Main
 class WeatherCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+}
+
+// MARK: - Fuction
+extension WeatherCollectionViewCell {
+    func compose(data: WeatherPresentable) {
+        // TODO
+    }
 }
