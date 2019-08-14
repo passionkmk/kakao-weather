@@ -39,6 +39,8 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addUI()
+        
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -58,6 +60,9 @@ extension SearchViewController {
         tableView.register(UINib(nibName: CellName.locationList, bundle: nil), forCellReuseIdentifier: CellName.locationList)
         navigationItem.titleView = searchTextField
         view.addSubview(tableView)
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        imageView.image = UIImage(named: "wi-hurricane")!
+        view.addSubview(imageView)
     }
     
     func setLayout() {

@@ -33,6 +33,7 @@
 		96CCA9502301570300FB1708 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96CCA94E2301570300FB1708 /* WeatherCollectionViewCell.xib */; };
 		96CCA95423028CCD00FB1708 /* WeatherPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CCA95323028CCD00FB1708 /* WeatherPresentable.swift */; };
 		96CCA95623029A0C00FB1708 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CCA95523029A0C00FB1708 /* WeatherViewModel.swift */; };
+		96CCA9582303D0AE00FB1708 /* Climate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CCA9572303D0AE00FB1708 /* Climate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		96CCA94E2301570300FB1708 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		96CCA95323028CCD00FB1708 /* WeatherPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresentable.swift; sourceTree = "<group>"; };
 		96CCA95523029A0C00FB1708 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		96CCA9572303D0AE00FB1708 /* Climate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Climate.swift; sourceTree = "<group>"; };
 		B3AB86F9DD5910F6E573B3F9 /* Pods_kakao_weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kakao_weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D912D4759937438D16EC9461 /* Pods-kakao-weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakao-weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kakao-weather/Pods-kakao-weather.debug.xcconfig"; sourceTree = "<group>"; };
 		F465E03BAE16056140B2B0B6 /* Pods-kakao-weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kakao-weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-kakao-weather/Pods-kakao-weather.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				7B42C1E322FAD78800C93987 /* Common.swift */,
 				962B565122FBC60500874DAA /* Log.swift */,
 				7B22E2B422FF1A6000C71FFF /* Extension.swift */,
+				96CCA9572303D0AE00FB1708 /* Climate.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 			files = (
 				7B22E2B522FF1A6000C71FFF /* Extension.swift in Sources */,
 				96CCA95623029A0C00FB1708 /* WeatherViewModel.swift in Sources */,
+				96CCA9582303D0AE00FB1708 /* Climate.swift in Sources */,
 				96CCA94F2301570300FB1708 /* WeatherCollectionViewCell.swift in Sources */,
 				962B565422FBC9B100874DAA /* Api.swift in Sources */,
 				7B42C1E622FB138500C93987 /* Router.swift in Sources */,
