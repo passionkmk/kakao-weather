@@ -22,8 +22,18 @@ class WeatherCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        addUI()
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addLayout()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reset()
+    }
 }
 
 // MARK: - Public Function
@@ -36,10 +46,19 @@ extension WeatherCollectionViewCell {
 // MARK: - Private Function
 extension WeatherCollectionViewCell {
     private func addUI() {
-        
+        addSubview(stackView)
     }
     
     private func addLayout() {
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+    }
+    
+    private func reset() {
         
     }
 }
