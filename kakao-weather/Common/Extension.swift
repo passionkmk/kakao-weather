@@ -67,29 +67,29 @@ extension UIViewController {
 extension UIView {
     var safeTopAnchor: NSLayoutYAxisAnchor {
         if #available(iOS 11.0, *) {
-            return self.safeAreaLayoutGuide.topAnchor
+            return safeAreaLayoutGuide.topAnchor
         }
-        return self.topAnchor
+        return topAnchor
     }
     
-    var safeLeftAnchor: NSLayoutXAxisAnchor {
+    var safeLeadingAnchor: NSLayoutXAxisAnchor {
         if #available(iOS 11.0, *){
-            return self.safeAreaLayoutGuide.leftAnchor
+            return safeAreaLayoutGuide.leadingAnchor
         }
-        return self.leftAnchor
+        return trailingAnchor
     }
     
-    var safeRightAnchor: NSLayoutXAxisAnchor {
+    var safeTrailingAnchor: NSLayoutXAxisAnchor {
         if #available(iOS 11.0, *){
-            return self.safeAreaLayoutGuide.rightAnchor
+            return safeAreaLayoutGuide.trailingAnchor
         }
-        return self.rightAnchor
+        return self.trailingAnchor
     }
     
     var safeBottomAnchor: NSLayoutYAxisAnchor {
         if #available(iOS 11.0, *) {
-            return self.safeAreaLayoutGuide.bottomAnchor
+            return safeAreaLayoutGuide.bottomAnchor
         }
-        return self.bottomAnchor
+        return bottomAnchor
     }
 }
