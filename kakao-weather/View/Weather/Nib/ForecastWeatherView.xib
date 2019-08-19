@@ -16,13 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="407" height="431"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1h1-tX-DMC" userLabel="Line View">
-                    <rect key="frame" x="16" y="44" width="375" height="0.0"/>
-                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" id="ghE-fR-L5q"/>
-                    </constraints>
-                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ywB-VG-hii">
                     <rect key="frame" x="0.0" y="44" width="407" height="353"/>
                 </stackView>
@@ -30,12 +23,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ywB-VG-hii" secondAttribute="trailing" id="EVc-es-kKt"/>
-                <constraint firstItem="1h1-tX-DMC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="FKP-JI-R9K"/>
                 <constraint firstItem="ywB-VG-hii" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Gts-GG-Fdo"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1h1-tX-DMC" secondAttribute="trailing" constant="16" id="Rms-BT-KAV"/>
-                <constraint firstItem="1h1-tX-DMC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Tni-Bs-4pq"/>
+                <constraint firstItem="ywB-VG-hii" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Ht9-yK-zFR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ywB-VG-hii" secondAttribute="bottom" id="WYe-Ae-EUr"/>
-                <constraint firstItem="ywB-VG-hii" firstAttribute="top" secondItem="1h1-tX-DMC" secondAttribute="bottom" id="bPh-C2-hIQ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

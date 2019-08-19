@@ -20,13 +20,14 @@ class WeatherViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.backgroundColor = .white
         collectionView.isPagingEnabled = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         if #available(iOS 11.0, *) {
-            collectionView.contentInsetAdjustmentBehavior = .never
+            collectionView.contentInsetAdjustmentBehavior = .automatic
         } else {
-            automaticallyAdjustsScrollViewInsets = false
+            automaticallyAdjustsScrollViewInsets = true
         }
         return collectionView
     }()
@@ -99,12 +100,11 @@ extension WeatherViewController {
     }
     
     func setLayout() {
-        collectionView.contentInset = UIEdgeInsets(top: navigationBarHeight, left: 0, bottom: 0, right: 0)
         NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.safeTopAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor)
             ])
     }
     

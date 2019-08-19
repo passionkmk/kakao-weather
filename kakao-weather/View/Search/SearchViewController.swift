@@ -31,6 +31,13 @@ class SearchViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.keyboardDismissMode = .onDrag
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .automatic
+        } else {
+            automaticallyAdjustsScrollViewInsets = true
+        }
+        
         return tableView
     }()
 
@@ -67,10 +74,10 @@ extension SearchViewController {
     
     func setLayout() {
         NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeTopAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor)
             ])
     }
 }
