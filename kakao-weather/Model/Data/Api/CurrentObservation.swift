@@ -41,26 +41,3 @@ struct Condition: Codable {
     let temperature: Int        // 온도
 }
 
-//"current_observation": {
-//    "wind": {
-//        "chill": 33,
-//        "direction": 255,
-//        "speed": 7
-//    },
-//    "atmosphere": {
-//        "humidity": 60,
-//        "visibility": 16.1,
-//        "pressure": 997,
-//        "rising": 0
-//    },
-//    "astronomy": {
-//        "sunrise": "5:43 am",
-//        "sunset": "7:31 pm"
-//    },
-//    "condition": {
-//        "text": "Partly Cloudy",
-//        "code": 30,
-//        "temperature": 33
-//    },
-//    "pubDate": 1565323200
-//},

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Main
 struct Spot: Codable {
     let name: String
     let country: String

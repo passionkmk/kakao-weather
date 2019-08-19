@@ -41,9 +41,4 @@ extension WeatherViewModel {
     }
 }
 
-// MARK: - Private Functions
-extension WeatherViewModel {
-    
-}
-
 

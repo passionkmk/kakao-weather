@@ -54,11 +54,6 @@ class SearchViewController: UIViewController {
     }
 }
 
-// MARK: - Actions
-extension SearchViewController {
-    
-}
-
 // MARK: - Functions
 extension SearchViewController {
     func addUI() {

@@ -19,16 +19,11 @@ class LocationTableViewCell: UITableViewCell {
         locationLabel.text = nil
         locationLabel.textColor = .white
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
 }
 
 // MARK - Fucntion
 extension LocationTableViewCell {
     func compose(data: Spot) {
-        
         locationLabel.text = "\(data.country), \(data.name)"
     }
 }

@@ -42,14 +42,3 @@ extension Forecast {
     }
 }
 
-
-
-
-//{
-//    "day": "Fri",
-//    "date": 1565276400,
-//    "low": 25,
-//    "high": 33,
-//    "text": "Thunderstorms",
-//    "code": 4
-//}

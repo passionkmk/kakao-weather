@@ -8,12 +8,14 @@
 
 import Foundation
 
+// MARK: - Main
 struct Weather: Codable {
     let location: Location
     let currentObservation: CurrentObservation
     let forecasts: [Forecast]
 }
 
+// MARK: - CodingKey
 extension Weather {
     enum CodingKeys: String, CodingKey {
         case location
@@ -21,14 +23,3 @@ extension Weather {
         case forecasts
     }
 }
-//{
-//    "location": {
-//                  ...
-//    },
-//    "current_observation": {
-//                  ...
-//    },
-//    "forecasts": [
-//                  ...
-//    ]
-//}

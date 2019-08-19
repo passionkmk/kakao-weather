@@ -32,12 +32,3 @@ extension Location {
     }
 }
 
-//"location": {
-//    "woeid": 28835148,
-//    "city": "Seoul",
-//    "region": " Seoul",
-//    "country": "South Korea",
-//    "lat": 37.507511,
-//    "long": 127.058128,
-//    "timezone_id": "Asia/Seoul"
-//}
