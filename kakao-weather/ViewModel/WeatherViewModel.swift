@@ -15,7 +15,7 @@ class WeatherViewModel: WeatherPresentable {
     var forecasts: [Forecast] = []
     
     private let spot: Spot
-    private let index: Int
+    public var index: Int
     
     init(_ spot: Spot, index: Int) {
         self.spot = spot

@@ -49,17 +49,7 @@ class WeatherViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        viewModels.forEach { [weak self] (model) in
-            model.loadData({ (index) in
-                guard let index = index else {
-                    return
-                }
-                DispatchQueue.main.async {
-                    self?.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
-                }
-            })
-        }
+        loadModel()
     }
     
     deinit {
@@ -77,12 +67,21 @@ extension WeatherViewController {
         if let spot = userInfo["spot"] as? Spot {
             let index = locations.map { $0.name }.firstIndex(of: spot.name)
             if let index = index {
-                // TODO: - Move index
+                let point = CGPoint(x: collectionView.frame.width * CGFloat(index), y: 0)
+                collectionView.setContentOffset(point, animated: false)
             }
             else {
+                let viewModel = WeatherViewModel(spot, index: 0)
+                viewModels.forEach { $0.index += 1 }
+                viewModels.insert(viewModel, at: 0)
+                viewModels[0].loadData { [weak self] (_) in
+                    DispatchQueue.main.async {
+                        self?.collectionView.reloadData()
+                        self?.collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+                    }
+                }
                 locations.insert(spot, at: 0)
                 UserDefaults.standard.setObjectArray(locations, key: UserDefaultsKey.spot)
-                // TODO: - Reload
             }
         }
     }
@@ -95,6 +94,7 @@ extension WeatherViewController {
     }
     
     func addUI() {
+        navigationItem.title = "날씨"
         collectionView.register(UINib(nibName: NibName.weatherCell, bundle: nil), forCellWithReuseIdentifier: NibName.weatherCell)
         view.addSubview(collectionView)
     }
@@ -104,13 +104,28 @@ extension WeatherViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor),
             collectionView.topAnchor.constraint(equalTo: view.safeTopAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor),
+            collectionView.widthAnchor.constraint(equalTo: view.widthAnchor)
             ])
+        collectionView.reloadData()
     }
     
     func setModel() {
         locations = UserDefaults.standard.getObjectArray(Spot.self, key: UserDefaultsKey.spot)
         viewModels = locations.enumerated().map { WeatherViewModel($1, index: $0) }
+    }
+    
+    func loadModel() {
+        viewModels.forEach { [weak self] (model) in
+            model.loadData({ (index) in
+                guard let index = index else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+                }
+            })
+        }
     }
 }
 
