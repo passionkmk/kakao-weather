@@ -16,9 +16,16 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-4M-BHl">
+                    <rect key="frame" x="16" y="0.0" width="288" height="0.5"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="fa2-99-OVf"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-ux-fEa">
-                    <rect key="frame" x="16" y="16" width="51" height="65"/>
-                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="24"/>
+                    <rect key="frame" x="16" y="32" width="42.5" height="33"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -38,17 +45,20 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Osa-n4-6Lt" secondAttribute="trailing" constant="16" id="0zt-SP-0lE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5h4-4M-BHl" secondAttribute="trailing" constant="16" id="2Yu-2X-e7D"/>
                 <constraint firstItem="0a6-tn-I8n" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5ez-QR-Tua"/>
+                <constraint firstItem="5h4-4M-BHl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FU4-j7-i4g"/>
                 <constraint firstItem="mDJ-ux-fEa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="FYH-xV-c4W"/>
                 <constraint firstItem="Osa-n4-6Lt" firstAttribute="leading" secondItem="fSc-9S-2MV" secondAttribute="trailing" constant="8" id="URF-tG-TGk"/>
                 <constraint firstItem="0a6-tn-I8n" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZqO-bU-1NT"/>
+                <constraint firstItem="5h4-4M-BHl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="iDj-0t-B6L"/>
                 <constraint firstItem="Osa-n4-6Lt" firstAttribute="centerY" secondItem="mDJ-ux-fEa" secondAttribute="centerY" id="pHS-Fh-zjW"/>
-                <constraint firstAttribute="bottom" secondItem="mDJ-ux-fEa" secondAttribute="bottom" constant="16" id="sw7-Gk-0UD"/>
+                <constraint firstAttribute="bottom" secondItem="mDJ-ux-fEa" secondAttribute="bottom" constant="32" id="sw7-Gk-0UD"/>
                 <constraint firstItem="fSc-9S-2MV" firstAttribute="centerY" secondItem="mDJ-ux-fEa" secondAttribute="centerY" id="vwW-A0-wCs"/>
-                <constraint firstItem="mDJ-ux-fEa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="z6Z-7X-gSw"/>
+                <constraint firstItem="mDJ-ux-fEa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="z6Z-7X-gSw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

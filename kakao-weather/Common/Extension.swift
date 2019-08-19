@@ -39,3 +39,26 @@ extension UIStackView {
         }
     }
 }
+
+// MARK: - UIViewConroller
+extension UIViewController {
+    var navigationBarHeight: CGFloat {
+        return navigationController?.navigationBar.frame.height ?? 0
+    }
+    
+    var topSafeArea: CGFloat {
+        if #available(iOS 11.0, *) {
+            return view.safeAreaInsets.top
+        } else {
+            return topLayoutGuide.length
+        }
+    }
+    
+    var bottomSafeArea: CGFloat {
+        if #available(iOS 11.0, *) {
+            return view.safeAreaInsets.bottom
+        } else {
+            return bottomLayoutGuide.length
+        }
+    }
+}

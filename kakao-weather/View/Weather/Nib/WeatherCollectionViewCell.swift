@@ -10,6 +10,8 @@ import UIKit
 
 // MARK: - Main
 class WeatherCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -27,7 +29,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        addLayout()
+        setLayout()
     }
     
     override func prepareForReuse() {
@@ -39,31 +41,33 @@ class WeatherCollectionViewCell: UICollectionViewCell {
 // MARK: - Public Function
 extension WeatherCollectionViewCell {
     public func compose(model: WeatherPresentable) {
-        let currentWeatherView = Bundle.main.loadNibNamed(NibName.currentWeatherView, owner: self)?.first as! CurrentWeatherView
-        currentWeatherView.widthAnchor.constraint(equalToConstant: bounds.width).isActive = true
-        currentWeatherView.compose(model: model)
+        if model.location != nil && model.currentObservation != nil {
+            let currentWeatherView = Bundle.main.loadNibNamed(NibName.currentWeatherView, owner: self)?.first as! CurrentWeatherView
+            currentWeatherView.compose(model: model)
+            stackView.addArrangedSubview(currentWeatherView)
+        }
         
-        let forecastWeatherView = Bundle.main.loadNibNamed(NibName.forecastWeatherView, owner: self)?.first as! ForecastWeatherView
-        forecastWeatherView.widthAnchor.constraint(equalToConstant: bounds.width).isActive = true
-        forecastWeatherView.compose(model: model)
-        
-        stackView.addArrangedSubview(currentWeatherView)
-        stackView.addArrangedSubview(forecastWeatherView)
+        if model.forecasts.count > 0 {
+            let forecastWeatherView = Bundle.main.loadNibNamed(NibName.forecastWeatherView, owner: self)?.first as! ForecastWeatherView
+            forecastWeatherView.compose(model: model)
+            stackView.addArrangedSubview(forecastWeatherView)
+        }
     }
 }
 
 // MARK: - Private Function
 extension WeatherCollectionViewCell {
     private func addUI() {
-        addSubview(stackView)
+        scrollView.addSubview(stackView)
     }
     
-    private func addLayout() {
+    private func setLayout() {
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
             ])
     }
 }

@@ -22,22 +22,43 @@ class WeatherViewController: UIViewController {
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        if #available(iOS 11.0, *) {
+            collectionView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
         return collectionView
     }()
     
     var locations: [Spot] = []
+    var viewModels: [WeatherViewModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addNoti()
         addUI()
-        locations = UserDefaults.standard.getObjectArray(Spot.self, key: UserDefaultsKey.spot)
-        d(locations)
+        setModel()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setLayout()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModels.forEach { [weak self] (model) in
+            model.loadData({ (index) in
+                guard let index = index else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+                }
+            })
+        }
     }
     
     deinit {
@@ -78,6 +99,7 @@ extension WeatherViewController {
     }
     
     func setLayout() {
+        collectionView.contentInset = UIEdgeInsets(top: navigationBarHeight, left: 0, bottom: 0, right: 0)
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -85,20 +107,25 @@ extension WeatherViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
+    
+    func setModel() {
+        locations = UserDefaults.standard.getObjectArray(Spot.self, key: UserDefaultsKey.spot)
+        viewModels = locations.enumerated().map { WeatherViewModel($1, index: $0) }
+    }
 }
 
 // MARK: - UICollectionView DataSource
 extension WeatherViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return locations.count
+        return viewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NibName.weatherCell, for: indexPath) as! WeatherCollectionViewCell
-        return cell
+        guard let model = viewModels.get(index: indexPath.item) else {
+            return UICollectionViewCell()
+        }
+        return model.loadCell(with: collectionView, indexPath: indexPath)
     }
-    
-    
 }
 
 // MARK: - UICollectionView Delegates

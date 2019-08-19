@@ -27,7 +27,6 @@ extension ForecastWeatherView {
         }
         model.forecasts.forEach { [weak self] (weather) in
             let forecastView = Bundle.main.loadNibNamed(NibName.forecastView, owner: self)?.first as! ForecastView
-            forecastView.widthAnchor.constraint(equalToConstant: bounds.width).isActive = true
             forecastView.compose(data: weather)
             self?.stackView.addArrangedSubview(forecastView)
         }

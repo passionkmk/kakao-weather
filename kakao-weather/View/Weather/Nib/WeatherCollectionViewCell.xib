@@ -18,9 +18,24 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="355" height="632"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX7-sB-sjs">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="632"/>
+                    </scrollView>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="WX7-sB-sjs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="53W-34-F9k"/>
+                <constraint firstItem="WX7-sB-sjs" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" id="8aq-me-HSe"/>
+                <constraint firstItem="WX7-sB-sjs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ael-vb-at7"/>
+                <constraint firstAttribute="trailing" secondItem="WX7-sB-sjs" secondAttribute="trailing" id="FUk-oj-EFk"/>
+                <constraint firstAttribute="bottom" secondItem="WX7-sB-sjs" secondAttribute="bottom" id="xoL-fy-Nyo"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="355" height="632"/>
+            <connections>
+                <outlet property="scrollView" destination="WX7-sB-sjs" id="Wrf-bd-uOT"/>
+            </connections>
             <point key="canvasLocation" x="10.869565217391305" y="118.52678571428571"/>
         </collectionViewCell>
     </objects>

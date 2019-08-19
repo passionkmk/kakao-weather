@@ -30,7 +30,7 @@ extension WeatherPresentable {
         }
         let date: Date = current.pubDate
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH시"
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH시 (관측시간)"
         return dateFormatter.string(from: date)
     }
     
