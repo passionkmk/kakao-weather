@@ -14,6 +14,8 @@ class ForecastWeatherView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        translatesAutoresizingMaskIntoConstraints = false
+        stackView.clean()
     }
 }
 
@@ -28,17 +30,6 @@ extension ForecastWeatherView {
             forecastView.widthAnchor.constraint(equalToConstant: bounds.width).isActive = true
             forecastView.compose(data: weather)
             self?.stackView.addArrangedSubview(forecastView)
-        }
-    }
-}
-
-// MARK: - Functions
-extension ForecastWeatherView {
-    func cleanStackView() {
-        let subViews = stackView.arrangedSubviews
-        for view in subViews {
-            stackView.removeArrangedSubview(view)
-            view.removeFromSuperview()
         }
     }
 }

@@ -30,6 +30,8 @@ enum HTTPMethod: String {
 enum NibName {
     static let locationCell: String = "LocationTableViewCell"
     static let weatherCell: String = "WeatherCollectionViewCell"
+    static let currentWeatherView: String = "CurrentWeatherView"
+    static let forecastWeatherView: String = "ForecastWeatherView"
     static let forecastView: String = "ForecastView"
 }
 

@@ -32,14 +32,23 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        reset()
+        stackView.clean()
     }
 }
 
 // MARK: - Public Function
 extension WeatherCollectionViewCell {
-    public func compose(data: WeatherPresentable) {
-        // TODO
+    public func compose(model: WeatherPresentable) {
+        let currentWeatherView = Bundle.main.loadNibNamed(NibName.currentWeatherView, owner: self)?.first as! CurrentWeatherView
+        currentWeatherView.widthAnchor.constraint(equalToConstant: bounds.width).isActive = true
+        currentWeatherView.compose(model: model)
+        
+        let forecastWeatherView = Bundle.main.loadNibNamed(NibName.forecastWeatherView, owner: self)?.first as! ForecastWeatherView
+        forecastWeatherView.widthAnchor.constraint(equalToConstant: bounds.width).isActive = true
+        forecastWeatherView.compose(model: model)
+        
+        stackView.addArrangedSubview(currentWeatherView)
+        stackView.addArrangedSubview(forecastWeatherView)
     }
 }
 
@@ -56,9 +65,5 @@ extension WeatherCollectionViewCell {
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
-    }
-    
-    private func reset() {
-        
     }
 }

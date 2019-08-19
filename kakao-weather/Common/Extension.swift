@@ -6,7 +6,7 @@
 //  Copyright © 2019 pkmk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - Array
 extension Array {
@@ -30,4 +30,12 @@ extension UserDefaults {
     }
 }
 
-
+// MARK: - UIStackView
+extension UIStackView {
+    func clean() {
+        for view in arrangedSubviews {
+            removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+    }
+}

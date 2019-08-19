@@ -29,6 +29,7 @@ class CurrentWeatherView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        translatesAutoresizingMaskIntoConstraints = false
         locationLabel.text = nil
         timeLabel.text = nil
         

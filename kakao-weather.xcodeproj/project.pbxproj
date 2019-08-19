@@ -151,8 +151,6 @@
 			children = (
 				96DF77B4230A3D3900876DB3 /* Nib */,
 				7B22E2A322FEA5BD00C71FFF /* WeatherViewController.swift */,
-				96CCA94D2301570300FB1708 /* WeatherCollectionViewCell.swift */,
-				96CCA94E2301570300FB1708 /* WeatherCollectionViewCell.xib */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -293,6 +291,8 @@
 		96DF77B4230A3D3900876DB3 /* Nib */ = {
 			isa = PBXGroup;
 			children = (
+				96CCA94D2301570300FB1708 /* WeatherCollectionViewCell.swift */,
+				96CCA94E2301570300FB1708 /* WeatherCollectionViewCell.xib */,
 				96DF77B5230A6C5400876DB3 /* CurrentWeatherView.swift */,
 				96DF77B9230A6D6B00876DB3 /* CurrentWeatherView.xib */,
 				96DF77B7230A6C7300876DB3 /* ForecastWeatherView.swift */,
