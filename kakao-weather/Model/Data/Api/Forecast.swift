@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Forecast: Codable {
+struct Forecast: Codable {      // 예보
     let day: String
     let date: Date
     let low: Int

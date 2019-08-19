@@ -16,28 +16,28 @@ struct CurrentObservation: Codable {
     let pubDate: Date
 }
 
-struct Wind: Codable {
-    let chill: Int
-    let direction: Int
-    let speed: Int
+struct Wind: Codable {      // 바람
+    let chill: Int          // 풍랭
+    let direction: Int      // 방향
+    let speed: Int          // 풍속
 }
 
-struct Atmosphere: Codable {
-    let humidity: Int
-    let visibility: Double
-    let pressure: Int
-    let rising: Int
+struct Atmosphere: Codable {    // 대기
+    let humidity: Int           // 습도
+    let visibility: Double      // 가시성
+    let pressure: Int           // 압력
+    let rising: Int             // 대기상승
 }
 
-struct Astronomy: Codable {
-    let sunrise: String
-    let sunset: String
+struct Astronomy: Codable {     // 천문
+    let sunrise: String         // 일출
+    let sunset: String          // 일몰
 }
 
 struct Condition: Codable {
     let text: String
     let code: Int
-    let temperature: Int
+    let temperature: Int        // 온도
 }
 
 //"current_observation": {

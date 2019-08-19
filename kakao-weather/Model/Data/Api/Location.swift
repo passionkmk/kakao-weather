@@ -10,12 +10,12 @@ import Foundation
 
 struct Location: Codable {
     let woeid: Int
-    let city: String
-    let region: String
-    let country: String
-    let lat: Double
-    let long: Double
-    let timezoneId: String
+    let city: String            // 도시명
+    let region: String          // 지방
+    let country: String         // 국가
+    let lat: Double             // 위도
+    let long: Double            // 경도
+    let timezoneId: String      // 타임존 id
 }
 
 extension Location {

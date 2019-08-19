@@ -22,7 +22,6 @@ class WeatherViewController: UIViewController {
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-
         return collectionView
     }()
     
