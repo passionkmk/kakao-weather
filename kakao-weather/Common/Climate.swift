@@ -149,7 +149,7 @@ extension Climate {
 
 // MARK: - Extension Functions
 extension Climate: CaseIterable {
-    private func fromCode(with code: Int) -> Climate {
+    public static func fromCode(with code: Int) -> Climate {
         guard let climate = Climate.allCases.get(index: code) else {
             return .notAvailable
         }

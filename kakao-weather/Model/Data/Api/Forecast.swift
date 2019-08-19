@@ -17,6 +17,32 @@ struct Forecast: Codable {      // 예보
     let code: Int
 }
 
+extension Forecast {
+    var dayOfWeek: String {
+        switch self.day {
+        case "Mon":
+            return "월요일"
+        case "Tue":
+            return "화요일"
+        case "Wed":
+            return "수요일"
+        case "Thu":
+            return "목요일"
+        case "Fri":
+            return "금요일"
+        case "Sat":
+            return "토요일"
+        case "Sun":
+            return "일요일"
+        default:
+            return ""
+        }
+    }
+}
+
+
+
+
 //{
 //    "day": "Fri",
 //    "date": 1565276400,
