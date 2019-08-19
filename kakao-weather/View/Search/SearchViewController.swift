@@ -57,7 +57,7 @@ extension SearchViewController {
 // MARK: - Functions
 extension SearchViewController {
     func addUI() {
-        tableView.register(UINib(nibName: CellName.locationList, bundle: nil), forCellReuseIdentifier: CellName.locationList)
+        tableView.register(UINib(nibName: NibName.locationCell, bundle: nil), forCellReuseIdentifier: NibName.locationCell)
         navigationItem.titleView = searchTextField
         view.addSubview(tableView)
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
@@ -85,7 +85,7 @@ extension SearchViewController: UITableViewDataSource {
         guard let spot = locations.get(index: indexPath.row) else {
             return UITableViewCell()
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellName.locationList, for: indexPath) as! LocationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: NibName.locationCell, for: indexPath) as! LocationTableViewCell
         cell.compose(data: spot)
         return cell
     }

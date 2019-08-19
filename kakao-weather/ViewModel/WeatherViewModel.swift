@@ -29,7 +29,7 @@ extension WeatherViewModel {
     }
     
     public func loadCell(with collecionView: UICollectionView, indexPath: IndexPath) -> WeatherCollectionViewCell {
-        let cell = collecionView.dequeueReusableCell(withReuseIdentifier: CellName.weatherList, for: indexPath) as! WeatherCollectionViewCell
+        let cell = collecionView.dequeueReusableCell(withReuseIdentifier: NibName.weatherCell, for: indexPath) as! WeatherCollectionViewCell
         cell.compose(data: self)
         return cell
     }

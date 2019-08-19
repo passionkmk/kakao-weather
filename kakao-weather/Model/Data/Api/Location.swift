@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Main
 struct Location: Codable {
     let woeid: Int
     let city: String            // 도시명
@@ -18,6 +19,7 @@ struct Location: Codable {
     let timezoneId: String      // 타임존 id
 }
 
+// MARK: - CodingKey
 extension Location {
     enum CodingKeys: String, CodingKey {
         case woeid

@@ -17,6 +17,8 @@ class ForecastView: UIView {
     @IBOutlet weak var lowTemperature: UILabel!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
+        translatesAutoresizingMaskIntoConstraints = false
         dayOfWeekLabel.text = nil
         weatherImageView.image = nil
         highTemperature.text = nil
@@ -29,7 +31,7 @@ extension ForecastView {
     func compose(data: Forecast) {
         dayOfWeekLabel.text = data.dayOfWeek
         weatherImageView.image = Climate.fromCode(with: data.code).weatherImage
-        highTemperature.text = "\(data.high)℃"
-        lowTemperature.text = "\(data.low)℃"
+        highTemperature.text = "\(data.high) ℃"
+        lowTemperature.text = "\(data.low) ℃"
     }
 }

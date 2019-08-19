@@ -73,7 +73,7 @@ extension WeatherViewController {
     }
     
     func addUI() {
-        collectionView.register(UINib(nibName: CellName.weatherList, bundle: nil), forCellWithReuseIdentifier: CellName.weatherList)
+        collectionView.register(UINib(nibName: NibName.weatherCell, bundle: nil), forCellWithReuseIdentifier: NibName.weatherCell)
         view.addSubview(collectionView)
     }
     
@@ -94,7 +94,7 @@ extension WeatherViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellName.weatherList, for: indexPath) as! WeatherCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NibName.weatherCell, for: indexPath) as! WeatherCollectionViewCell
         return cell
     }
     

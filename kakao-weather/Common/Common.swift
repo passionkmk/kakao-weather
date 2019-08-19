@@ -27,9 +27,10 @@ enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
-enum CellName {
-    static let locationList: String = "LocationTableViewCell"
-    static let weatherList: String = "WeatherCollectionViewCell"
+enum NibName {
+    static let locationCell: String = "LocationTableViewCell"
+    static let weatherCell: String = "WeatherCollectionViewCell"
+    static let forecastView: String = "ForecastView"
 }
 
 enum NotificationName {

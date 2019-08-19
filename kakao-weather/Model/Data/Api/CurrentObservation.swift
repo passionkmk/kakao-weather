@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Main
 struct CurrentObservation: Codable {
     let wind: Wind
     let atmosphere: Atmosphere

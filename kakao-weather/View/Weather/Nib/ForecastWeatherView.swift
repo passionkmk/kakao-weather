@@ -10,10 +10,35 @@ import UIKit
 
 // MARK: - Main
 class ForecastWeatherView: UIView {
-
+    @IBOutlet weak var stackView: UIStackView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }
 
 // MARK: - Compose
 extension ForecastWeatherView {
-    
+    func compose(model: WeatherPresentable) {
+        guard model.forecasts.count > 0 else {
+            return
+        }
+        model.forecasts.forEach { [weak self] (weather) in
+            let forecastView = Bundle.main.loadNibNamed(NibName.forecastView, owner: self)?.first as! ForecastView
+            forecastView.widthAnchor.constraint(equalToConstant: bounds.width).isActive = true
+            forecastView.compose(data: weather)
+            self?.stackView.addArrangedSubview(forecastView)
+        }
+    }
+}
+
+// MARK: - Functions
+extension ForecastWeatherView {
+    func cleanStackView() {
+        let subViews = stackView.arrangedSubviews
+        for view in subViews {
+            stackView.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+    }
 }

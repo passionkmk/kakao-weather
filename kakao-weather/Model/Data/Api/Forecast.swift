@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Main
 struct Forecast: Codable {      // 예보
     let day: String
     let date: Date
@@ -17,6 +18,7 @@ struct Forecast: Codable {      // 예보
     let code: Int
 }
 
+// MARK: - Value
 extension Forecast {
     var dayOfWeek: String {
         switch self.day {
