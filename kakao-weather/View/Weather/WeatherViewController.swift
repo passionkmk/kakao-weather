@@ -139,7 +139,9 @@ extension WeatherViewController: UICollectionViewDataSource {
         guard let model = viewModels.get(index: indexPath.item) else {
             return UICollectionViewCell()
         }
-        return model.loadCell(with: collectionView, indexPath: indexPath)
+        let cell = model.loadCell(with: collectionView, indexPath: indexPath)
+        cell.delegate = self
+        return cell
     }
 }
 
@@ -147,5 +149,22 @@ extension WeatherViewController: UICollectionViewDataSource {
 extension WeatherViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+}
+
+// MARK: - WeatherRefreshDelegate
+extension WeatherViewController: WeatherRefreshDelegate {
+    func refresh(index: Int) {
+        guard let model = viewModels.get(index: index) else {
+            return
+        }
+        model.loadData { [weak self] (index) in
+            guard let index = index else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+            }
+        }
     }
 }

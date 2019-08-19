@@ -30,7 +30,6 @@ extension WeatherViewModel {
             self?.location = weather?.location
             self?.currentObservation = weather?.currentObservation
             self?.forecasts = weather?.forecasts ?? []
-            d((weather))
             completion(self?.index)
         }
     }

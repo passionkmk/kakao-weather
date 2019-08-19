@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3DB4CEB2C0DA9D92E7EF90E6 /* Pods_kakao_weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3AB86F9DD5910F6E573B3F9 /* Pods_kakao_weather.framework */; };
+		7B1418EB230B1075002A6F5F /* WeatherRefreshDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1418EA230B1075002A6F5F /* WeatherRefreshDelegate.swift */; };
 		7B22E2A422FEA5BD00C71FFF /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B22E2A322FEA5BD00C71FFF /* WeatherViewController.swift */; };
 		7B22E2A622FEA5CD00C71FFF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B22E2A522FEA5CD00C71FFF /* SearchViewController.swift */; };
 		7B22E2AB22FEB33200C71FFF /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B22E2A922FEB33200C71FFF /* LocationTableViewCell.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B1418EA230B1075002A6F5F /* WeatherRefreshDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRefreshDelegate.swift; sourceTree = "<group>"; };
 		7B22E2A322FEA5BD00C71FFF /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		7B22E2A522FEA5CD00C71FFF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7B22E2A922FEB33200C71FFF /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		96CCA951230275D000FB1708 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7B1418EA230B1075002A6F5F /* WeatherRefreshDelegate.swift */,
 				96CCA95323028CCD00FB1708 /* WeatherPresentable.swift */,
 				96CCA95523029A0C00FB1708 /* WeatherViewModel.swift */,
 			);
@@ -507,6 +510,7 @@
 				962B565D22FD3E8300874DAA /* Location.swift in Sources */,
 				96CCA95423028CCD00FB1708 /* WeatherPresentable.swift in Sources */,
 				962B565222FBC60500874DAA /* Log.swift in Sources */,
+				7B1418EB230B1075002A6F5F /* WeatherRefreshDelegate.swift in Sources */,
 				7B42C1E422FAD78800C93987 /* Common.swift in Sources */,
 				7B22E2A622FEA5CD00C71FFF /* SearchViewController.swift in Sources */,
 				7B22E2B022FEB45000C71FFF /* Spot.swift in Sources */,

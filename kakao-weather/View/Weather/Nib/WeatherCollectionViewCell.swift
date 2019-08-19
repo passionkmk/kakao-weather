@@ -21,6 +21,15 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    lazy var refreshControl: UIRefreshControl = {
+       let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(WeatherCollectionViewCell.refresh), for: .valueChanged)
+        return refreshControl
+    }()
+    
+    private var index: Int?
+    weak var delegate: WeatherRefreshDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,9 +47,9 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     }
 }
 
-// MARK: - Public Function
+// MARK: - Compose
 extension WeatherCollectionViewCell {
-    public func compose(model: WeatherPresentable) {
+    public func compose(model: WeatherViewModel) {
         if model.location != nil && model.currentObservation != nil {
             let currentWeatherView = Bundle.main.loadNibNamed(NibName.currentWeatherView, owner: self)?.first as! CurrentWeatherView
             currentWeatherView.compose(model: model)
@@ -52,13 +61,29 @@ extension WeatherCollectionViewCell {
             forecastWeatherView.compose(model: model)
             stackView.addArrangedSubview(forecastWeatherView)
         }
+        
+        index = model.index
     }
 }
 
-// MARK: - Private Function
+// MARK: - Action
+extension WeatherCollectionViewCell {
+    @objc func refresh() {
+        guard let index = index else {
+            return
+        }
+        delegate?.refresh(index: index)
+        DispatchQueue.main.async { [weak self] in
+            self?.refreshControl.endRefreshing()
+        }
+    }
+}
+
+// MARK: - Function
 extension WeatherCollectionViewCell {
     private func addUI() {
         scrollView.addSubview(stackView)
+        scrollView.addSubview(refreshControl)
     }
     
     private func setLayout() {
