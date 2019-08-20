@@ -21,7 +21,7 @@ extension WeatherPresentable {
         guard let loc = location else {
             return nil
         }
-        return "\(loc.country), \(loc.city)"
+        return "\(loc.country), \(loc.region), \(loc.city)"
     }
     
     var dateString: String? {
