@@ -76,7 +76,7 @@ extension WeatherViewController {
                 let viewModel = WeatherViewModel(spot, index: 0)
                 viewModels.forEach { $0.index += 1 }
                 viewModels.insert(viewModel, at: 0)
-                viewModels[0].loadData { [weak self] (_) in
+                viewModels.get(index: 0)?.loadData { [weak self] (_) in
                     DispatchQueue.main.async {
                         self?.collectionView.reloadData()
                         DispatchQueue.main.async {
