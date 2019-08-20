@@ -68,7 +68,9 @@ extension WeatherViewController {
             let index = locations.map { $0.name }.firstIndex(of: spot.name)
             if let index = index {
                 let point = CGPoint(x: collectionView.frame.width * CGFloat(index), y: 0)
-                collectionView.setContentOffset(point, animated: false)
+                DispatchQueue.main.async { [weak self] in
+                    self?.collectionView.setContentOffset(point, animated: true)
+                }
             }
             else {
                 let viewModel = WeatherViewModel(spot, index: 0)
@@ -77,7 +79,9 @@ extension WeatherViewController {
                 viewModels[0].loadData { [weak self] (_) in
                     DispatchQueue.main.async {
                         self?.collectionView.reloadData()
-                        self?.collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+                        DispatchQueue.main.async {
+                            self?.collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+                        }
                     }
                 }
                 locations.insert(spot, at: 0)
