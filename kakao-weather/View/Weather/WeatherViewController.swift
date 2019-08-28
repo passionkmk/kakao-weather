@@ -108,8 +108,7 @@ extension WeatherViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor),
             collectionView.topAnchor.constraint(equalTo: view.safeTopAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor),
-            collectionView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor)
             ])
         collectionView.reloadData()
     }
